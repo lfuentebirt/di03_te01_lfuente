@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis noticias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- Entiendo que la ion card no sería necesaria aqui. Anadimos el scroll para que se puedan ver todas las noticias-->
+<ion-content style="height: auto; overflow-y: scroll;">
+  <ion-item *ngFor="let arti of articulos">
+    <ion-col size="auto">
+      <ion-checkbox (click)="ckSeleccion(arti)" aria-label="Label"/>
+    </ion-col>
+    <ion-col class="ion-margin">
+      <a target="_blank" style="text-decoration: none;">{{arti.source.name}}</a>
+      <ion-label>{{arti.title}}</ion-label>
+    </ion-col>
+  </ion-item>
+</ion-content>

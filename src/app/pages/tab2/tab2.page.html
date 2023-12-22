@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis noticias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- utilizamos ion-card como se pide, hacemos un bucle FOR para visualizar cada noticia seleccionada-->
+<ion-content style="height: auto; overflow-y: scroll;">
+  <ion-card *ngFor="let arti of articulosLeer">
+    <ion-card-header>
+      <ion-card-subtitle>{{arti.source.name}}</ion-card-subtitle>
+      <ion-card-title style="font-weight: bold;">{{arti.title}}</ion-card-title>
+    </ion-card-header>
+
+    <img src="{{arti.urlToImage}}" />
+    <ion-card-content>{{arti.description}}</ion-card-content>
+    
+    <a target="_parent" style="margin-left: 5%; margin-right: 70%;" href="{{arti.url}}">Leer</a>
+    <ion-icon name="trash-outline" style="text-align: end" (click)="borrarArticulo(arti)"></ion-icon>
+  </ion-card>
+</ion-content>
