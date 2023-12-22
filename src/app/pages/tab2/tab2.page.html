@@ -1,10 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Mis noticias
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-page-header></app-page-header>
 <!-- utilizamos ion-card como se pide, hacemos un bucle FOR para visualizar cada noticia seleccionada-->
 <ion-content style="height: auto; overflow-y: scroll;">
   <ion-card *ngFor="let arti of articulosLeer">
